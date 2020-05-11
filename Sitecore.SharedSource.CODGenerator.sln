@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.SharedSource.CODG", "Sitecore.SharedSource.CODGenerator\Sitecore.SharedSource.CODG.csproj", "{EF240151-65A8-426D-BF37-F89EA2408031}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.SharedSource.CODG.Serialization", "Sitecore.SharedSource.CODG.Serialization\Sitecore.SharedSource.CODG.Serialization.csproj", "{A3DD597F-764A-4702-A84B-1071F3EAD1A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPOI", "NPOI\NPOI.csproj", "{10FA8538-157A-4380-A4F6-8E2C3EE92CAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		.net 4 Release|Any CPU = .net 4 Release|Any CPU
+		.net 4.5 release|Any CPU = .net 4.5 release|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF240151-65A8-426D-BF37-F89EA2408031}..net 4 Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF240151-65A8-426D-BF37-F89EA2408031}..net 4 Release|Any CPU.Build.0 = Release|Any CPU
+		{EF240151-65A8-426D-BF37-F89EA2408031}..net 4.5 release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF240151-65A8-426D-BF37-F89EA2408031}..net 4.5 release|Any CPU.Build.0 = Release|Any CPU
+		{EF240151-65A8-426D-BF37-F89EA2408031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF240151-65A8-426D-BF37-F89EA2408031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF240151-65A8-426D-BF37-F89EA2408031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF240151-65A8-426D-BF37-F89EA2408031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DD597F-764A-4702-A84B-1071F3EAD1A4}..net 4 Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DD597F-764A-4702-A84B-1071F3EAD1A4}..net 4 Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DD597F-764A-4702-A84B-1071F3EAD1A4}..net 4.5 release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DD597F-764A-4702-A84B-1071F3EAD1A4}..net 4.5 release|Any CPU.Build.0 = Release|Any CPU
+		{A3DD597F-764A-4702-A84B-1071F3EAD1A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DD597F-764A-4702-A84B-1071F3EAD1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DD597F-764A-4702-A84B-1071F3EAD1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DD597F-764A-4702-A84B-1071F3EAD1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10FA8538-157A-4380-A4F6-8E2C3EE92CAE}..net 4 Release|Any CPU.ActiveCfg = .net 4 Release|Any CPU
+		{10FA8538-157A-4380-A4F6-8E2C3EE92CAE}..net 4 Release|Any CPU.Build.0 = .net 4 Release|Any CPU
+		{10FA8538-157A-4380-A4F6-8E2C3EE92CAE}..net 4.5 release|Any CPU.ActiveCfg = .net 4.5 release|Any CPU
+		{10FA8538-157A-4380-A4F6-8E2C3EE92CAE}..net 4.5 release|Any CPU.Build.0 = .net 4.5 release|Any CPU
+		{10FA8538-157A-4380-A4F6-8E2C3EE92CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10FA8538-157A-4380-A4F6-8E2C3EE92CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10FA8538-157A-4380-A4F6-8E2C3EE92CAE}.Release|Any CPU.ActiveCfg = .net 4 Release|Any CPU
+		{10FA8538-157A-4380-A4F6-8E2C3EE92CAE}.Release|Any CPU.Build.0 = .net 4 Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
+		SolutionGuid = {1828C555-899D-46F0-A68D-B1A0F1572F36}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Areas/CODG/Views/CODG/Common/Layout.cshtml";
+}
+
+<div class="MainWrapper">
+    <form class="form import-form" method="post"
+          generate-action="/CODG/CODG/GenerateForm"
+          status-action="/CODG/CODG/GetJobStatus">
+        <div class="context-fields">
+            @Html.Partial("_ContextFields")
+        </div>
+        <h2>Import</h2>
+        <div class="Section import-section">
+            <div class="Controls">
+                <div class="formRow form-buttons">
+                    <button class="import-submit scButton scButtonPrimary" rel="Data">Generate COD</button>
+                </div>
+                <div class="rowSpacer"></div>
+                <div class="formRow importError"></div>
+                <div class="formRow importStatus">
+                    <div class="status-number"></div>
+                    <div class="status-message"></div>
+                    <div class="status-bar">
+                        <div class="status-bar-color"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </form>
+    @Html.Partial("_ProgressIndicator")
+</div>
