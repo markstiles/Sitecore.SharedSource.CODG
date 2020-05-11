@@ -109,7 +109,7 @@ namespace Sitecore.SharedSource.CODG.Services
             Workbook.DocumentSummaryInformation = dsi;
             
             var baseTemplateSheet = Workbook.CreateSheet("Base Templates");
-            FillBaseTemplateSheet(Workbook, baseTemplateSheet, model, db);
+            FillBaseTemplateSheet(baseTemplateSheet, model, db);
             if (Context.Job != null)
                 Context.Job.Status.Processed = 2;
 
@@ -122,17 +122,17 @@ namespace Sitecore.SharedSource.CODG.Services
                 Context.Job.Status.Processed = 4;
 
             var containerSheet = Workbook.CreateSheet("Layout Containers");
-            FillContainerSheet(Workbook, containerSheet, model, db);
+            FillContainerSheet(containerSheet, model, db);
             if (Context.Job != null)
                 Context.Job.Status.Processed = 5;
 
             var pageSheet = Workbook.CreateSheet("Pages");
-            FillPageSheet(Workbook, pageSheet, model, db);
+            FillPageSheet(pageSheet, model, db);
             if (Context.Job != null)
                 Context.Job.Status.Processed = 6;
 
             var componentSheet = Workbook.CreateSheet("Components");
-            FillComponentSheet(Workbook, componentSheet, model, db);
+            FillComponentSheet(componentSheet, model, db);
             if (Context.Job != null)
                 Context.Job.Status.Processed = 7;
 
@@ -141,7 +141,7 @@ namespace Sitecore.SharedSource.CODG.Services
                 Context.Job.Status.Processed = 8;
 
             var enumSheet = Workbook.CreateSheet("Enumerations");
-            FillEnumerationSheet(Workbook, enumSheet, model, db);
+            FillEnumerationSheet(enumSheet, model, db);
             if (Context.Job != null)
                 Context.Job.Status.Processed = 9;
 
@@ -252,7 +252,7 @@ namespace Sitecore.SharedSource.CODG.Services
 
         #region Fill Sheets
 
-        protected void FillBaseTemplateSheet(HSSFWorkbook workbook, ISheet sheet, CODModel model, Database db)
+        protected void FillBaseTemplateSheet(ISheet sheet, CODModel model, Database db)
         {
             BuildRow(sheet, HeadStyle, GetHeadValues());
 
@@ -267,13 +267,13 @@ namespace Sitecore.SharedSource.CODG.Services
 
                 BuildRow(sheet, GreenStyle, GetTemplateValues(itm.Value.Name, "Base Template"));
 
-                EnumerateTemplateFields(workbook, sheet, db, itm.Value, "");
+                EnumerateTemplateFields(sheet, db, itm.Value, "");
 
                 JobService.SetJobMessage($"Processed base template item {line} of {totalLines}");
             }
         }
 
-        protected void FillContainerSheet(HSSFWorkbook workbook, ISheet sheet, CODModel model, Database db)
+        protected void FillContainerSheet(ISheet sheet, CODModel model, Database db)
         {
             BuildRow(sheet, HeadStyle, GetHeadValues());
 
@@ -288,13 +288,13 @@ namespace Sitecore.SharedSource.CODG.Services
 
                 BuildRow(sheet, GreenStyle, GetTemplateValues(itm.Value.Name, "Container"));
 
-                EnumerateTemplateFields(workbook, sheet, db, itm.Value, "");
+                EnumerateTemplateFields(sheet, db, itm.Value, "");
 
                 JobService.SetJobMessage($"Processed container item {line} of {totalLines}");
             }
         }
         
-        protected void FillPageSheet(HSSFWorkbook workbook, ISheet sheet, CODModel model, Database db)
+        protected void FillPageSheet(ISheet sheet, CODModel model, Database db)
         {
             BuildRow(sheet, HeadStyle, GetPageValues());
 
@@ -308,12 +308,16 @@ namespace Sitecore.SharedSource.CODG.Services
                 line++;
 
                 var baseField = (DelimitedField)itm.Value.Fields[FieldIDs.BaseTemplate];
-                var baseList = baseField?.Items.Select(a => itm.Value.Database.GetItem(a)).Where(b => b != null).Select(c => c.Name);
+                var baseList = baseField?.Items.Where(c => !c.Equals("{1930BBEB-7805-471A-A3BE-4858AC7CF696}"))
+                    .Select(a => itm.Value.Database.GetItem(a))
+                    .Where(b => b != null)
+                    .Select(c => c.Name);
                 var baseValue = baseList.Any() ? string.Join(", ", baseList) : "";
 
                 var device = (DeviceItem)itm.Value.Database.GetItem(DeviceId);
                 var textInfo = new CultureInfo("en-US", false).TextInfo;
-                var placeholders = PresentationService.GetPlaceholders(itm.Value, DeviceId.ToString());
+                var standardValues = db.Templates[itm.Value.ID].StandardValues;
+                var placeholders = PresentationService.GetPlaceholders(standardValues, DeviceId.ToString());
                 var placeholderKeys = new List<string>();
                 if (placeholders.Any())
                     placeholderKeys = placeholders.Select(a => textInfo.ToTitleCase(a.Key.Replace("-", " "))).ToList();
@@ -321,13 +325,13 @@ namespace Sitecore.SharedSource.CODG.Services
                 
                 BuildRow(sheet, GreenStyle, GetPageTemplateValues(itm.Value.Name, "Page", baseValue, rendValue));
 
-                EnumerateTemplateFields(workbook, sheet, db, itm.Value, "");
+                EnumerateTemplateFields(sheet, db, itm.Value, "");
 
                 JobService.SetJobMessage($"Processed page item {line} of {totalLines}");
             }
         }
 
-        protected void FillEnumerationSheet(HSSFWorkbook workbook, ISheet sheet, CODModel model, Database db)
+        protected void FillEnumerationSheet(ISheet sheet, CODModel model, Database db)
         {
             BuildRow(sheet, HeadStyle, GetHeadValues());
 
@@ -342,13 +346,13 @@ namespace Sitecore.SharedSource.CODG.Services
 
                 BuildRow(sheet, GreenStyle, GetTemplateValues(itm.Value.Name, "Enumeration"));
 
-                EnumerateTemplateFields(workbook, sheet, db, itm.Value, "");
+                EnumerateTemplateFields(sheet, db, itm.Value, "");
 
                 JobService.SetJobMessage($"Processed enumeration item {line} of {totalLines}");
             }
         }
 
-        protected void FillComponentSheet(HSSFWorkbook workbook, ISheet sheet, CODModel model, Database db)
+        protected void FillComponentSheet(ISheet sheet, CODModel model, Database db)
         {
             BuildRow(sheet, HeadStyle, GetHeadValues());
 
@@ -377,9 +381,9 @@ namespace Sitecore.SharedSource.CODG.Services
                 }
 
                 if (dsItem != null) 
-                    EnumerateTemplateFields(workbook, sheet, db, dsItem, "Datasource");
+                    EnumerateTemplateFields(sheet, db, dsItem, "Datasource");
                 if (rpItem != null)
-                    EnumerateTemplateFields(workbook, sheet, db, rpItem, "Rendering Parameters");
+                    EnumerateTemplateFields(sheet, db, rpItem, "Rendering Parameters");
 
                 JobService.SetJobMessage($"Processed component item {line} of {totalLines}");
             }
@@ -524,7 +528,7 @@ namespace Sitecore.SharedSource.CODG.Services
             }
         }
 
-        protected void EnumerateTemplateFields(HSSFWorkbook workbook, ISheet sheet, Database db, Item item, string type)
+        protected void EnumerateTemplateFields(ISheet sheet, Database db, Item item, string type)
         {
             if (!item.HasChildren)
                 return;
