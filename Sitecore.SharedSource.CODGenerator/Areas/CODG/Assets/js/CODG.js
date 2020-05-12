@@ -53,6 +53,8 @@ jQuery(document).ready(function () {
                                 jQuery(".progress-indicator").hide();
                                 jQuery(".importStatus").show();
                                 jQuery(".status-message").text(jobResult.Message);
+                                if (jobResult.File.length > 0)
+                                    jQuery(".status-file").html("<a href=" + jobResult.File + " target='_blank'>Download COD</a>");
                                 jQuery(".status-number").text(numberWithCommas(jobResult.Current) + " of " + numberWithCommas(jobResult.Total));
                                 var percent = jobResult.Current / jobResult.Total * 100;
                                 jQuery(".status-bar-color").attr("style", "width:" + percent + "%;");

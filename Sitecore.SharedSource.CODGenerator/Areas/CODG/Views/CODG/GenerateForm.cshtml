@@ -1,4 +1,5 @@
-﻿@{
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
     Layout = "~/Areas/CODG/Views/CODG/Common/Layout.cshtml";
 }
 
@@ -7,7 +8,9 @@
           generate-action="/CODG/CODG/GenerateForm"
           status-action="/CODG/CODG/GetJobStatus">
         <div class="context-fields">
-            @Html.Partial("_ContextFields")
+            <input type="hidden" name="id" id="id" value="@Request.QueryString["id"]" />
+            <input type="hidden" name="db" id="db" value="@Request.QueryString["db"]" />
+            <input type="hidden" name="language" id="language" value="@Request.QueryString["language"]" />
         </div>
         <h2>Import</h2>
         <div class="Section import-section">
@@ -20,6 +23,7 @@
                 <div class="formRow importStatus">
                     <div class="status-number"></div>
                     <div class="status-message"></div>
+                    <div class="status-file"></div>
                     <div class="status-bar">
                         <div class="status-bar-color"></div>
                     </div>
@@ -29,5 +33,7 @@
         </div>
         <div class="clear"></div>
     </form>
-    @Html.Partial("_ProgressIndicator")
+    <div class="progress-indicator">
+        <img src="/sitecore/shell/themes/standard/Images/ProgressIndicator/sc-spinner32.gif" />
+    </div>
 </div>

@@ -54,15 +54,17 @@ namespace Sitecore.SharedSource.CODG.Areas.CODG.Controllers
                 ? j.Status.Messages[j.Status.Messages.Count - 1]
                 : "";
 
-            var result = new JobStatusViewModel()
-            {
+            var file = !string.IsNullOrWhiteSpace(message) && (j?.IsDone ?? false)
+                ? j.Status.Messages[j.Status.Messages.Count - 2]
+                : "";
+            
+            return Json(new {
                 Current = j?.Status.Processed ?? 0,
                 Total = j?.Status.Total ?? 0,
                 Completed = j?.IsDone ?? true,
-                Message = message
-            };
-
-            return Json(result);
+                Message = message,
+                File = file
+            });
         }
     }
 }

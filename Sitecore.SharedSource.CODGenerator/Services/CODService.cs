@@ -102,7 +102,8 @@ namespace Sitecore.SharedSource.CODG.Services
                 Context.Job.Status.Processed = 1;
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-            string filePath = $"{HttpRuntime.AppDomainAppPath}Areas\\CODG\\Files\\COD.{DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss")}.xls";
+            var relFilePath = $"Areas\\CODG\\Files\\COD.{DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss")}.xls";
+            string filePath = $"{HttpRuntime.AppDomainAppPath}{relFilePath}";
             
             var dsi = PropertySetFactory.CreateDocumentSummaryInformation();
             dsi.Company = "Velir";
@@ -151,6 +152,8 @@ namespace Sitecore.SharedSource.CODG.Services
 
             if (Context.Job != null)
                 Context.Job.Status.State = JobState.Finished;
+
+            JobService.SetJobMessage($"/{relFilePath}");
 
             FileStream file = new FileStream(filePath, FileMode.Create);
             Workbook.Write(file);

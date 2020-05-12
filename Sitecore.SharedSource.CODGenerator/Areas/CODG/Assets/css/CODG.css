@@ -45,6 +45,8 @@ body { background:#F0F1F2; margin:0px; padding:0px; }
             .importError { display:none; color:#333; font-size: 15px; font-family: arial; font-weight: bold; border-left-color: #DC291E; }
             .importStatus { display:none; margin-bottom: 15px; }
                 .status-number { display:block; font-size: 24px; }
+                .status-message { font-size: 12px; margin: 10px 0; }
+                .status-file { color: red; font-weight: bold; font-size: 14px; text-decoration: underline; }
                 .status-bar { height: 20px; width: 500px; border: 2px solid #ccc; margin-top: 20px; }
                     .status-bar-color { background-color: #ff0000; height: 100%; width: 0%; }
 
