@@ -6,3 +6,5 @@ Sitecore.SharedSource.CODG.Serialization/bin/
 Sitecore.SharedSource.CODG.Serialization/obj/
 Sitecore.SharedSource.CODGenerator/bin/
 Sitecore.SharedSource.CODGenerator/obj/
+NPOI/obj/
+output/
