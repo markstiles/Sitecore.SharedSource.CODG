@@ -150,10 +150,10 @@ namespace Sitecore.SharedSource.CODG.Services
             if (Context.Job != null)
                 Context.Job.Status.Processed = 10;
 
+            JobService.SetJobMessage($"/{relFilePath}");
+
             if (Context.Job != null)
                 Context.Job.Status.State = JobState.Finished;
-
-            JobService.SetJobMessage($"/{relFilePath}");
 
             FileStream file = new FileStream(filePath, FileMode.Create);
             Workbook.Write(file);
