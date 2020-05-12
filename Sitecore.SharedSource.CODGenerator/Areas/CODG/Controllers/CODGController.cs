@@ -28,7 +28,7 @@ namespace Sitecore.SharedSource.CODG.Areas.CODG.Controllers
             var handleName = $"CODG-{DateTime.UtcNow:yyyy/MM/dd-hh:mm}";
             var codService = new CODService();
 
-            var jobOptions = new JobOptions(
+            var jobOptions = new DefaultJobOptions(
                 handleName,
                 "COD Generation",
                 Context.Site.Name,
