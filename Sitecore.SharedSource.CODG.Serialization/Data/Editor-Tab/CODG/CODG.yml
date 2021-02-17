@@ -1,0 +1,31 @@
+﻿---
+ID: "66b85269-a641-42cd-8311-92b5ec21ed7e"
+Parent: "c9bc5e07-a157-4b40-ba47-6fed15b93b46"
+Template: "a5aaca0d-77c0-4741-ab77-211cfbdd9e5c"
+Path: /sitecore/content/Applications/Content Editor/Editors/CODG/CODG
+DB: core
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Network/32x32/server_from_client.png
+- ID: "6f371c74-5bd5-4ebd-b10a-fc54716021ae"
+  Hint: Url
+  Value: /CODG/CODG/Index
+- ID: "ab8d0102-91f3-43b6-90aa-5a0641dc8521"
+  Hint: Icon
+  Value: "http://sc824/temp/iconcache/office/32x32/tab_pane.png"
+Languages:
+- Language: en
+  Fields:
+  - ID: "f7c42332-728e-48b7-bb3c-0d6883e45628"
+    Hint: Header
+    Value: COD Generator
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20140428T160241Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin

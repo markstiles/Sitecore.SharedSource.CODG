@@ -1,0 +1,14 @@
+﻿---
+ID: "c9bc5e07-a157-4b40-ba47-6fed15b93b46"
+Parent: "4c37cc67-c51e-4c70-8949-e294768a4fa4"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/Applications/Content Editor/Editors/CODG
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200508T135107Z

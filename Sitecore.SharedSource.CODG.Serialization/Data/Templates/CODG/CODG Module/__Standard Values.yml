@@ -1,0 +1,22 @@
+﻿---
+ID: "abf43d85-37b8-454b-83ca-7767e3d3ae1d"
+Parent: "ceff807e-8aa9-41ea-a19b-cd8861161b72"
+Template: "ceff807e-8aa9-41ea-a19b-cd8861161b72"
+Path: /sitecore/templates/CODG/CODG Module/__Standard Values
+DB: master
+SharedFields:
+- ID: "a0cb3965-8884-4c7a-8815-b6b2e5ced162"
+  Hint: __Editors
+  Type: TreelistEx
+  Value: "{66B85269-A641-42CD-8311-92B5EC21ED7E}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200508T135238Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin

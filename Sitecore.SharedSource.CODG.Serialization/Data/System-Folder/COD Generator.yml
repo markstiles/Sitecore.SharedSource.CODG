@@ -1,0 +1,14 @@
+﻿---
+ID: "65166af3-6799-40a9-8e6d-55198c2bae6b"
+Parent: "08477468-d438-43d4-9d6a-6d84a611971c"
+Template: "ceff807e-8aa9-41ea-a19b-cd8861161b72"
+Path: /sitecore/system/Modules/COD Generator
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200508T135259Z
