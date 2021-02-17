@@ -14,7 +14,7 @@ using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Jobs;
-using Sitecore.SharedSource.CODG.Areas.CODG.Models;
+using Sitecore.SharedSource.CODG.Models;
 
 namespace Sitecore.SharedSource.CODG.Services
 {
@@ -102,7 +102,7 @@ namespace Sitecore.SharedSource.CODG.Services
                 Context.Job.Status.Processed = 1;
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-            var relFilePath = $"Areas\\CODG\\Files\\COD.{DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss")}.xls";
+            var relFilePath = $"Files\\COD.{DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss")}.xls";
             string filePath = $"{HttpRuntime.AppDomainAppPath}{relFilePath}";
             
             var dsi = PropertySetFactory.CreateDocumentSummaryInformation();

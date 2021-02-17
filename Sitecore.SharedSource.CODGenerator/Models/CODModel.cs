@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Sitecore.SharedSource.CODG.Areas.CODG.Models
+namespace Sitecore.SharedSource.CODG.Models
 {
     public class CODModel
     {
@@ -22,7 +22,7 @@ namespace Sitecore.SharedSource.CODG.Areas.CODG.Models
         }
         
         public Dictionary<Guid, Item> Layouts { get; set; }
-        public new Dictionary<Guid, Item> Containers { get; set; }
+        public Dictionary<Guid, Item> Containers { get; set; }
         public Dictionary<Guid, Item> Renderings { get; set; }
         public Dictionary<Guid, Item> Sublayouts { get; set; }
         public Dictionary<Guid, Item> Pages { get; set; }

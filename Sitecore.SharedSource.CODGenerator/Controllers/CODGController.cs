@@ -10,14 +10,13 @@ using Sitecore.Data.Fields;
 using System.IO;
 using System.Configuration;
 using System.Reflection;
-using Sitecore.SharedSource.CODG.Areas.CODG.Models;
+using Sitecore.SharedSource.CODG.Models;
 using Sitecore.SharedSource.CODG.Services;
 
-namespace Sitecore.SharedSource.CODG.Areas.CODG.Controllers
+namespace Sitecore.SharedSource.CODG.Controllers
 {
     public class CODGController : Controller
     {
-
         public ActionResult Index(string id, string language, string version, string db)
         {
             return View("GenerateForm");

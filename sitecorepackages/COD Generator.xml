@@ -1,0 +1,85 @@
+<project>
+  <Metadata>
+    <metadata>
+      <PackageName>COD Generator</PackageName>
+      <Author>mstiles</Author>
+      <Version>2021.2.17</Version>
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme />
+      <Publisher />
+      <PostStep />
+      <PackageID />
+    </metadata>
+  </Metadata>
+  <SaveProject>True</SaveProject>
+  <Sources>
+    <xitems>
+      <Entries>
+        <x-item>/master/sitecore/system/Modules/COD Generator/{65166AF3-6799-40A9-8E6D-55198C2BAE6B}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/CODG/{6057C6EC-A074-45F0-9EB9-9CB130CF502B}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/CODG/CODG Module/__Standard Values/{ABF43D85-37B8-454B-83CA-7767E3D3AE1D}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/CODG/CODG Module/{CEFF807E-8AA9-41EA-A19B-CD8861161B72}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>templates and modules</Name>
+    </xitems>
+    <xitems>
+      <Entries>
+        <x-item>/core/sitecore/content/Applications/Content Editor/Editors/CODG/{C9BC5E07-A157-4B40-BA47-6FED15B93B46}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Content Editor/Editors/CODG/CODG/{66B85269-A641-42CD-8311-92B5EC21ED7E}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>editor tab</Name>
+    </xitems>
+    <xfiles>
+      <Entries>
+        <x-item>/App_Config/Include/CODG/Sitecore.SharedSource.CODG.config</x-item>
+        <x-item>/Assets/css/CODG.css</x-item>
+        <x-item>/Assets/js/CODG.js</x-item>
+        <x-item>/bin/BouncyCastle.Crypto.dll</x-item>
+        <x-item>/bin/ICSharpCode.SharpZipLib.dll</x-item>
+        <x-item>/bin/NPOI.dll</x-item>
+        <x-item>/bin/Sitecore.SharedSource.CODG.dll</x-item>
+        <x-item>/Files/placeholder.txt</x-item>
+        <x-item>/Views/CODG/Common/Layout.cshtml</x-item>
+        <x-item>/Views/CODG/Common/web.config</x-item>
+        <x-item>/Views/CODG/GenerateForm.cshtml</x-item>
+        <x-item>/Views/CODG/web.config</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>files</Name>
+    </xfiles>
+  </Sources>
+  <Converter>
+    <TrivialConverter>
+      <Transforms />
+    </TrivialConverter>
+  </Converter>
+  <Include />
+  <Exclude />
+  <Name />
+</project>

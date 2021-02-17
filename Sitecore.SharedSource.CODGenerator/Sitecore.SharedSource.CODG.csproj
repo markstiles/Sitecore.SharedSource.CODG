@@ -58,10 +58,8 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Kernel.NoReferences.8.2.170614\lib\NET452\Sitecore.Kernel.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="sysglobl" />
     <Reference Include="System" />
@@ -104,28 +102,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Config\Include\CODG\Sitecore.SharedSource.CODG.config" />
     <None Include="Properties\PublishProfiles\deploy.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\AreaRegistration.cs" />
-    <Compile Include="App_Start\IocConfig.cs" />
-    <Compile Include="Areas\CODG\Models\CODModel.cs" />
+    <Compile Include="Controllers\CODGController.cs" />
+    <Compile Include="App_Start\RouteRegistration.cs" />
     <Compile Include="Services\CODService.cs" />
     <Compile Include="Services\JobService.cs" />
     <Compile Include="Services\PresentationService.cs" />
-    <Content Include="Areas\CODG\Assets\css\CODG.css" />
-    <Content Include="Areas\CODG\Assets\js\CODG.js" />
-    <Compile Include="Areas\CODG\Controllers\CODGController.cs" />
+    <Content Include="Assets\css\CODG.css" />
+    <Content Include="Assets\js\CODG.js" />
+    <Compile Include="Models\CODModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\CODG\Files\placeholder.txt" />
-    <Content Include="Areas\CODG\Views\CODG\GenerateForm.cshtml" />
-    <Content Include="Areas\CODG\Views\CODG\Common\web.config" />
-    <Content Include="App_Config\Include\CODG\Sitecore.SharedSource.CODG.config" />
-    <Content Include="Areas\CODG\Views\CODG\web.config" />
-    <Content Include="Areas\CODG\Views\CODG\Common\Layout.cshtml" />
+    <Content Include="Files\placeholder.txt" />
+    <Content Include="Views\CODG\GenerateForm.cshtml" />
+    <Content Include="Views\CODG\Common\web.config" />
+    <Content Include="Views\CODG\web.config" />
+    <Content Include="Views\CODG\Common\Layout.cshtml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -136,6 +133,7 @@
       <Name>NPOI</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
